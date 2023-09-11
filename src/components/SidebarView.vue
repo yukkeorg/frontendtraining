@@ -22,5 +22,6 @@ export default {
     border: 2px solid #444;
     background-color: #555;
     min-width: 240px;
+    width: 240px;
 }
 </style>

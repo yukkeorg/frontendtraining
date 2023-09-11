@@ -1,20 +1,16 @@
 <template>
-<main>
+<main id="main">
 </main>
 </template>
 
 <script>
 export default {
     name: 'MainView',
-    data() {
-        return {
-        }
-    }
 }
 </script>
 
 <style lang="scss" scoped>
-main {
+#main {
     position: relative;
     height: 100vh;
     background-color: #444;

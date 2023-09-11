@@ -1,26 +1,16 @@
 <template>
   <div id="app">
-    <SidebarView />
-    <MainView />
-</div>
+    <router-view />
+  </div>
 </template>
 
 <script>
-import SidebarView from './components/SidebarView.vue';
-import MainView from './components/MainView.vue';
-import '@acab/reset.css';
+import "@acab/reset.css";
 
 export default {
-  name: 'App',
-  components: {
-    SidebarView,
-    MainView,
-  }
+  name: "App",
 }
 </script>
 
-<style>
-#app {
-  display: flex;
-}
+<style lang="scss">
 </style>
