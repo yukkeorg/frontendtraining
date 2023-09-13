@@ -1,39 +1,19 @@
 <template>
 <main id="main">
-    <div id="messages">
-        <ul>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-            <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-
-        </ul>
-    </div>
-    <inputText />
+    <TodoList />
+    <AddTodo />
 </main>
 </template>
 
 <script>
-import InputText from './InputText.vue';
+import AddTodo from './AddTodo.vue';
+import TodoList from './TodoList.vue';
 
 export default {
     name: 'MainView',
     components: {
-        InputText
+        TodoList,
+        AddTodo,
     }
 }
 </script>
@@ -47,13 +27,5 @@ export default {
 
     display: flex;
     flex-direction: column;
-
-    #messages {
-        flex: 1;
-        overflow-y: auto;
-        overflow-x: hidden;
-
-        padding: 10px;
-    }
 }
 </style>

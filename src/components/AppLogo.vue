@@ -1,6 +1,6 @@
 <template>
 <div id="logo">
-    <h1>Chat App</h1>
+    <h1>Todo</h1>
 </div>
 </template>
 

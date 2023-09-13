@@ -1,16 +1,19 @@
 <template>
 <aside id="sidebar">
     <AppLogo />
+    <ChannelList />
 </aside>
 </template>
 
 <script>
 import AppLogo from './AppLogo.vue';
+import ChannelList from './ChannelList.vue';
 
 export default {
     name: 'SidebarView',
     components: {
-        AppLogo
+        AppLogo,
+        ChannelList
     }
 }
 </script>
