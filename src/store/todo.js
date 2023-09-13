@@ -24,11 +24,11 @@ export default {
             });
         },
         removeTodo: (state, todo) => {
-            state.todos = state.todos.find((origin) => origin.id !== todo.id); 
+            state.todos = state.todos.filter((origin) => origin.id !== todo.id);
         },
         toggleCheck: (state, todo) => {
             const targetTodo = state.todos.find((origin) => origin.id === todo.id);
-            targetTodo.checked = !targetTodo.checked; 
+            targetTodo.checked = !targetTodo.checked;
         },
         setSelected: (state, selected) => {
             state.selected = selected;
