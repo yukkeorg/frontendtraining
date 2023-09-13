@@ -21,7 +21,6 @@ export default {
     methods: {
         onDeleteTodo(todo) {
             this.$store.dispatch("todos/deleteTodo", todo);
-            console.log("aaa");
         }
     }
 }
