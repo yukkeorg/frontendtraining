@@ -1,3 +1,5 @@
+import Storage from '@/api/storage.js';
+
 export default {
     namespaced: true,
     state: () => {
@@ -35,6 +37,13 @@ export default {
         },
         incrementId: (state) => {
             state.id++;
+        },
+        loadTodos: (state) => {
+            state.todos = Storage.fetchTodo();
+            state.id = state.todos.length;
+        },
+        saveTodos: (state) => {
+            Storage.saveTodo(state.todos);
         }
     },
     actions: {
@@ -49,6 +58,12 @@ export default {
         },
         updateId: (context) => {
             context.commit('incrementId');
+        },
+        loadTodos: (context) => {
+            context.commit('loadTodos');
+        },
+        saveTodos: (context) => {
+            context.commit('saveTodos');
         }
     }
 }

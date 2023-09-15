@@ -10,7 +10,6 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import { fetch, save } from '@/api/storage.js';
 
 export default {
     name: "TodoList",
@@ -22,17 +21,7 @@ export default {
     methods: {
         onDeleteTodo(todo) {
             this.$store.dispatch("todos/deleteTodo", todo);
-        }
-    },
-    created() {
-        this.todos = fetch();
-    },
-    watch: {
-        todos: {
-            handler(todos) {
-                save(todos);
-            },
-            deep: true
+            this.$store.dispatch("todos/saveTodos");
         }
     }
 }
