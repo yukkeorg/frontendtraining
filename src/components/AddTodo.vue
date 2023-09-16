@@ -18,8 +18,6 @@ export default {
     methods: {
         onEnterPress: function() {
             this.$store.dispatch("todos/addTodo", this.newTodo);
-            this.$store.dispatch("todos/updateId");
-            this.$store.dispatch("todos/saveTodos");
             this.newTodo = "";
         }
     }

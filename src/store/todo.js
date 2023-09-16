@@ -49,21 +49,19 @@ export default {
     actions: {
         addTodo: (context, task) => {
             context.commit('pushTodo', task);
+            context.commit('incrementId');
+            context.commit('saveTodos');
         },
         deleteTodo: (context, todo) => {
             context.commit('removeTodo', todo);
+            context.commit('todos/saveTodos');
+
         },
         changeSelected: (context, channel) => {
             context.commit('setSelected', channel);
         },
-        updateId: (context) => {
-            context.commit('incrementId');
-        },
         loadTodos: (context) => {
             context.commit('loadTodos');
         },
-        saveTodos: (context) => {
-            context.commit('saveTodos');
-        }
     }
 }

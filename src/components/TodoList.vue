@@ -21,7 +21,6 @@ export default {
     methods: {
         onDeleteTodo(todo) {
             this.$store.dispatch("todos/deleteTodo", todo);
-            this.$store.dispatch("todos/saveTodos");
         }
     }
 }
@@ -52,7 +51,6 @@ export default {
         }
 
         button {
-            color: #000000;
             padding: 2px 1em;;
         }
     }
