@@ -1,7 +1,7 @@
 <template>
 <div id="todolist">
     <div v-for="todo in todos" :key="todo.id" class="todoitem">
-        <input type="checkbox" v-model="todo.checked" />
+        <input type="checkbox" @change="onChangeCheck(todo)" />
         <span>{{ todo.task }}</span>
         <button @click="onDeleteTodo(todo)">削除</button>
     </div>
@@ -19,6 +19,9 @@ export default {
         }),
     },
     methods: {
+        onChangeCheck(todo) {
+            this.$store.dispatch("todos/toggleCheck", todo);
+        },
         onDeleteTodo(todo) {
             this.$store.dispatch("todos/deleteTodo", todo);
         }

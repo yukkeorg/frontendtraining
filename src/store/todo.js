@@ -56,7 +56,9 @@ export default {
             context.commit('removeTodo', todo);
             context.commit('saveTodos');
         },
-        changeSelected: (context, channel) => {
+        toggleCheck(context, todo) {
+            context.commit('toggleCheck', todo);
+        },
             context.commit('setSelected', channel);
         },
         loadTodos: (context) => {
