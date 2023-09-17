@@ -2,7 +2,7 @@ import Storage from '@/api/storage.js';
 
 export default {
     namespaced: true,
-    state: () => {
+    state() {
         return {
             id: 0,
             selected: "",
@@ -10,58 +10,59 @@ export default {
         }
     },
     getters: {
-        allTodos: (state) => {
+        allTodos(state) {
             return state.todos;
         },
-        selected: (state) => {
+        selected(state) {
             return state.selected;
         },
     },
     mutations: {
-        pushTodo: (state, task) => {
+        pushTodo(state, task) {
             state.todos.unshift({
                 id: state.id,
                 task: task,
                 checked: false
             });
         },
-        removeTodo: (state, todo) => {
+        removeTodo(state, todo) {
             state.todos = state.todos.filter((origin) => origin.id !== todo.id);
         },
-        toggleCheck: (state, todo) => {
+        toggleCheck(state, todo) {
             const targetTodo = state.todos.find((origin) => origin.id === todo.id);
             targetTodo.checked = !targetTodo.checked;
         },
-        setSelected: (state, selected) => {
+        setSelected(state, selected) {
             state.selected = selected;
         },
-        incrementId: (state) => {
+        incrementId(state) {
             state.id++;
         },
-        loadTodos: (state) => {
+        loadTodos(state) {
             state.todos = Storage.fetchTodo();
             state.id = state.todos.length;
         },
-        saveTodos: (state) => {
+        saveTodos(state) {
             Storage.saveTodo(state.todos);
         }
     },
     actions: {
-        addTodo: (context, task) => {
+        addTodo(context, task) {
             context.commit('pushTodo', task);
             context.commit('incrementId');
             context.commit('saveTodos');
         },
-        deleteTodo: (context, todo) => {
+        deleteTodo(context, todo) {
             context.commit('removeTodo', todo);
             context.commit('saveTodos');
         },
         toggleCheck(context, todo) {
             context.commit('toggleCheck', todo);
         },
+        changeSelected(context, channel) {
             context.commit('setSelected', channel);
         },
-        loadTodos: (context) => {
+        loadTodos(context) {
             context.commit('loadTodos');
         },
     }
