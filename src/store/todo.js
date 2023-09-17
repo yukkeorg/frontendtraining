@@ -54,8 +54,7 @@ export default {
         },
         deleteTodo: (context, todo) => {
             context.commit('removeTodo', todo);
-            context.commit('todos/saveTodos');
-
+            context.commit('saveTodos');
         },
         changeSelected: (context, channel) => {
             context.commit('setSelected', channel);
